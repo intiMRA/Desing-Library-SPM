@@ -17,11 +17,11 @@ public enum DesignAnimations {
     var animationName: String {
         switch self {
         case .jumpLoading:
-            return "jumpLoading.json"
+            return "jumpLoading"
         case .skipLoading:
-            return UITraitCollection.current.userInterfaceStyle == .light ? "skippingLoadingLight.json" : "skippingLoadingDark.json"
+            return UITraitCollection.current.userInterfaceStyle == .light ? "skippingLoadingLight" : "skippingLoadingDark"
         case .standardLoadding:
-            return UITraitCollection.current.userInterfaceStyle == .light ? "standardLoaddingLight.json" : "standardLoaddingDark.json"
+            return UITraitCollection.current.userInterfaceStyle == .light ? "standardLoaddingLight" : "standardLoaddingDark"
         }
     }
 }

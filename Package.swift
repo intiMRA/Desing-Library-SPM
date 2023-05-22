@@ -19,7 +19,10 @@ let package = Package(
     targets: [
         .target(
             name: "Design Library",
-            dependencies: [.product(name: "Lottie", package: "lottie-spm")]),
+            dependencies: [.product(name: "Lottie", package: "lottie-spm")],
+            swiftSettings: [
+                .define("SPM")
+              ]),
         .testTarget(
             name: "Design LibraryTests",
             dependencies: ["Design Library"]),

@@ -20,7 +20,7 @@ let package = Package(
         .target(
             name: "Design Library",
             dependencies: [.product(name: "Lottie", package: "lottie-spm")],
-            resources: [.copy("Resources")],
+            resources: [.copy("Resorces")],
             swiftSettings: [
                 .define("SPM")
               ]),

@@ -21,6 +21,13 @@ public enum CommonPadding: CGFloat {
     case xxxLarge = 40
 }
 
+public enum CommonSizes: CGFloat {
+    case small = 50
+    case medium = 100
+    case large = 200
+    case xLarge = 300
+}
+
 public enum IconSize {
     case small
     case large
@@ -65,7 +72,7 @@ public extension View {
             .frame(width: size, height: size, alignment: alignment)
     }
     
-    func squareFrame(size: CommonPadding, alignment: Alignment = .center) -> some View {
+    func squareFrame(size: CommonSizes, alignment: Alignment = .center) -> some View {
         self
             .squareFrame(size: size.rawValue, alignment: alignment)
     }

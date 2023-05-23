@@ -17,11 +17,11 @@ public enum DesignAnimations {
     var animationName: String {
         switch self {
         case .jumpLoading:
-            return "jumpLoading.json"
+            return "jumpLoading"
         case .skipLoading:
-            return UITraitCollection.current.userInterfaceStyle == .light ? "skippingLoadingLight.json" : "skippingLoadingDark.json"
+            return UITraitCollection.current.userInterfaceStyle == .light ? "skippingLoadingLight" : "skippingLoadingDark"
         case .standardLoadding:
-            return UITraitCollection.current.userInterfaceStyle == .light ? "standardLoaddingLight.json" : "standardLoaddingDark.json"
+            return UITraitCollection.current.userInterfaceStyle == .light ? "standardLoaddingLight" : "standardLoaddingDark"
         }
     }
 }
@@ -40,7 +40,7 @@ public struct LottieView: UIViewRepresentable {
     public func makeUIView(context: Context) -> some UIView {
         let view = UIView(frame: .zero)
  
-        animationView.animation = LottieAnimation.named(lottieFile.animationName)
+        animationView.animation = LottieAnimation.named(lottieFile.animationName, bundle: Bundle.module)
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = loopMode
         animationView.play()
@@ -58,4 +58,6 @@ public struct LottieView: UIViewRepresentable {
  
     }
 }
+
+private class ForBundle { }
 

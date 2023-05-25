@@ -13,6 +13,7 @@ public enum DesignAnimations {
     case jumpLoading
     case skipLoading
     case standardLoadding
+    case pigeonLoading
     
     var animationName: String {
         switch self {
@@ -22,6 +23,9 @@ public enum DesignAnimations {
             return UITraitCollection.current.userInterfaceStyle == .light ? "skippingLoadingLight" : "skippingLoadingDark"
         case .standardLoadding:
             return UITraitCollection.current.userInterfaceStyle == .light ? "standardLoaddingLight" : "standardLoaddingDark"
+        case .pigeonLoading:
+            return UITraitCollection.current.userInterfaceStyle == .light ? "pigeonLoadingLight" : "pigeonLoadingDark"
+            
         }
     }
 }

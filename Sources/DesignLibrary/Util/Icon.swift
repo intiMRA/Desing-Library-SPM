@@ -26,7 +26,7 @@ public struct Icon: View {
             self.color = color
     }
     public var body: some View {
-        Image(iconName.rawValue)
+        Image(iconName.rawValue, bundle: .module)
             .icon(size: size, color: color)
     }
 }

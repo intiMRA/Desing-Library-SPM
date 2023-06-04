@@ -65,15 +65,15 @@ public extension Image {
             .foregroundColor(color)
     }
     
-    func sized(size: IconSize) -> some View {
+    func sized(size: CommonSizes) -> some View {
         self
             .sized(width: size, height: size)
     }
     
-    func sized(width: IconSize, height: IconSize) -> some View {
+    func sized(width: CommonSizes, height: CommonSizes) -> some View {
         self
             .resizable()
-            .frame(width: width.value(), height: height.value())
+            .frame(width: width, height: height)
     }
 }
 
@@ -86,6 +86,11 @@ public extension View {
     func squareFrame(size: CommonSizes, alignment: Alignment = .center) -> some View {
         self
             .squareFrame(size: size.rawValue, alignment: alignment)
+    }
+    
+    func frame(width: CommonSizes, height: CommonSizes) -> some View {
+        self
+            .frame(width: width.rawValue, height: height.rawValue)
     }
     
     func padding(_ edges: Edge.Set = .all, _ size: CommonPadding) -> some View {

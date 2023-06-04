@@ -64,6 +64,17 @@ public extension Image {
             .frame(width: width.value(), height: height.value(), alignment: alignment)
             .foregroundColor(color)
     }
+    
+    func sized(size: IconSize) -> some View {
+        self
+            .sized(width: size, height: size)
+    }
+    
+    func sized(width: IconSize, height: IconSize) -> some View {
+        self
+            .resizable()
+            .frame(width: width.value(), height: height.value())
+    }
 }
 
 public extension View {

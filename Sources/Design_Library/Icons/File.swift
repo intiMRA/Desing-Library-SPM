@@ -17,6 +17,14 @@ public struct Icon: View {
     let size: IconSize
     let color: Color
     
+    public init(
+        iconName: IconNames,
+        size: IconSize = .standard,
+        color: Color =  UITraitCollection.current.userInterfaceStyle == .light ? .black : .white) {
+            self.iconName = iconName
+            self.size = size
+            self.color = color
+    }
     var body: some View {
         Image(iconName.rawValue)
             .icon(size: IconSize, color: color)

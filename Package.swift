@@ -4,28 +4,27 @@
 import PackageDescription
 
 let package = Package(
-    name: "Design_Library",
+    name: "DesignLibrary",
     platforms: [
         .iOS(.v16)
         ],
     products: [
         .library(
-            name: "Design_Library",
-            targets: ["Design_Library"]),
+            name: "DesignLibrary",
+            targets: ["DesignLibrary"]),
     ],
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-spm", .upToNextMajor(from: "4.0.0")),
     ],
     targets: [
         .target(
-            name: "Design_Library",
+            name: "DesignLibrary",
             dependencies: [.product(name: "Lottie", package: "lottie-spm")],
             resources: [
-                .process("AnimationFiles"),
                 .process("Assets")
             ]),
         .testTarget(
-            name: "Design_LibraryTests",
-            dependencies: ["Design_Library"]),
+            name: "DesignLibraryTests",
+            dependencies: ["DesignLibrary"]),
     ]
 )

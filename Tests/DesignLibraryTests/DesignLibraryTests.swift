@@ -1,7 +1,7 @@
 import XCTest
 @testable import Design_Library
 
-final class Design_LibraryTests: XCTestCase {
+final class DesignLibraryTests: XCTestCase {
     func testExample() throws {
 
     }

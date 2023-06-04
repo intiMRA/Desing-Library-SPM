@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 public enum IconNames: String {
-    case search, list, bag
+    case list, bag
 }
 
 public struct Icon: View {

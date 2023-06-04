@@ -22,7 +22,7 @@ let package = Package(
             dependencies: [.product(name: "Lottie", package: "lottie-spm")],
             resources: [
                 .process("AnimationFiles"),
-                .process("Icons")
+                .process("Assets")
             ]),
         .testTarget(
             name: "Design_LibraryTests",

@@ -49,7 +49,7 @@ public enum IconSize {
 }
 
 public extension Image {
-    func icon(with size: IconSize = .standard, color: Color = .black, alignment: Alignment = .center) -> some View {
+    func icon(size: IconSize = .standard, color: Color = .black, alignment: Alignment = .center) -> some View {
         self
             .renderingMode(.template)
             .resizable()
@@ -57,7 +57,7 @@ public extension Image {
             .foregroundColor(color)
     }
     
-    func icon(with width: IconSize, height: IconSize, color: Color = .black, alignment: Alignment = .center) -> some View {
+    func icon(width: IconSize, height: IconSize, color: Color = .black, alignment: Alignment = .center) -> some View {
         self
             .renderingMode(.template)
             .resizable()

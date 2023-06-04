@@ -20,7 +20,10 @@ let package = Package(
         .target(
             name: "Design_Library",
             dependencies: [.product(name: "Lottie", package: "lottie-spm")],
-            resources: [.process("AnimationFiles")]),
+            resources: [
+                .process("AnimationFiles"),
+                .process("Icons")
+            ]),
         .testTarget(
             name: "Design_LibraryTests",
             dependencies: ["Design_Library"]),

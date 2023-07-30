@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "cevronLightMode.pdf",
+      "filename" : "chevronLightMode.pdf",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "cevronDarkMode.pdf",
+      "filename" : "chevronDarkMode.pdf",
       "idiom" : "universal"
     }
   ],

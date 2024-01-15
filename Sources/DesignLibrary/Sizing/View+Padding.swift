@@ -49,7 +49,7 @@ public enum IconSize {
 }
 
 public extension Image {
-    func icon(with size: IconSize = .standard, color: Color = .black, alignment: Alignment = .center) -> some View {
+    func icon(size: IconSize = .standard, color: Color = .black, alignment: Alignment = .center) -> some View {
         self
             .renderingMode(.template)
             .resizable()
@@ -57,12 +57,23 @@ public extension Image {
             .foregroundColor(color)
     }
     
-    func icon(with width: IconSize, height: IconSize, color: Color = .black, alignment: Alignment = .center) -> some View {
+    func icon(width: IconSize, height: IconSize, color: Color = .black, alignment: Alignment = .center) -> some View {
         self
             .renderingMode(.template)
             .resizable()
             .frame(width: width.value(), height: height.value(), alignment: alignment)
             .foregroundColor(color)
+    }
+    
+    func sized(size: CommonSizes) -> some View {
+        self
+            .sized(width: size, height: size)
+    }
+    
+    func sized(width: CommonSizes, height: CommonSizes) -> some View {
+        self
+            .resizable()
+            .frame(width: width, height: height)
     }
 }
 
@@ -75,6 +86,11 @@ public extension View {
     func squareFrame(size: CommonSizes, alignment: Alignment = .center) -> some View {
         self
             .squareFrame(size: size.rawValue, alignment: alignment)
+    }
+    
+    func frame(width: CommonSizes, height: CommonSizes) -> some View {
+        self
+            .frame(width: width.rawValue, height: height.rawValue)
     }
     
     func padding(_ edges: Edge.Set = .all, _ size: CommonPadding) -> some View {

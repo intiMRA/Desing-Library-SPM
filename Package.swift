@@ -14,7 +14,7 @@ let package = Package(
             targets: ["DesignLibrary"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/airbnb/lottie-spm", .upToNextMajor(from: "4.0.0")),
+        .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMinor(from: "4.5.1")),
     ],
     targets: [
         .target(

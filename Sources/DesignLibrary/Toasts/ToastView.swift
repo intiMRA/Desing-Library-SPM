@@ -49,11 +49,12 @@ public struct ToastView: View {
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(lineWidth: 1)
+                    .stroke(lineWidth: 2)
                     .foregroundStyle(model.style.color)
                     .shadow(color: Color(.shadow).opacity(0.25), radius: 2, x: 1, y: 1)
             )
             .background(.background)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding(.all, .large)
         }
         .task {
@@ -79,6 +80,7 @@ public struct ToastView: View {
             }
             .background(Color.clear)
             .presentationBackground(Color.clear)
+            .background(.background)
         } else {
             // Fallback on earlier versions
         }

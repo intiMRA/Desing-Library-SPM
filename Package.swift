@@ -19,7 +19,9 @@ let package = Package(
     targets: [
         .target(
             name: "DesignLibrary",
-            dependencies: [.product(name: "Lottie", package: "lottie-spm")],
+            dependencies: [
+                .product(name: "Lottie", package: "lottie-spm")
+            ],
             resources: [
                 .process("Assets")
             ]),

@@ -9,6 +9,11 @@ import SwiftUI
 
 public struct ToastView: View {
     let model: ToastModel
+    
+    public init(model: ToastModel) {
+        self.model = model
+    }
+    
     public var body: some View {
         VStack(alignment: .leading) {
             HStack {

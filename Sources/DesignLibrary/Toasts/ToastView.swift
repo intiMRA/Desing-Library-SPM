@@ -53,8 +53,8 @@ public struct ToastView: View {
                     .foregroundStyle(model.style.color)
                     .shadow(color: Color(.shadow).opacity(0.25), radius: 2, x: 1, y: 1)
             )
-            .padding(.all, .medium)
             .background(.background)
+            .padding(.all, .large)
         }
         .task {
             model.setDismissTimer()
@@ -67,14 +67,20 @@ public struct ToastView: View {
         
     }
     .sheet(isPresented: .constant(true)) {
-        VStack {
-            ToastView(model: .init(style: .success(title: "title", message: "message"), shouldDismiss: { }))
-            
-            ToastView(model: .init(style: .info(title: "title", message: "message"), shouldDismiss: { }))
-            
-            ToastView(model: .init(style: .warning(title: "title", message: "message"), shouldDismiss: { }))
-            
-            ToastView(model: .init(style: .error(title: "title", message: "message"), shouldDismiss: { }))
+        if #available(iOS 16.4, *) {
+            VStack {
+                ToastView(model: .init(style: .success(title: "title", message: "message"), shouldDismiss: { }))
+                
+                ToastView(model: .init(style: .info(title: "title", message: "message"), shouldDismiss: { }))
+                
+                ToastView(model: .init(style: .warning(title: "title", message: "message"), shouldDismiss: { }))
+                
+                ToastView(model: .init(style: .error(title: "title", message: "message"), shouldDismiss: { }))
+            }
+            .background(Color.clear)
+            .presentationBackground(Color.clear)
+        } else {
+            // Fallback on earlier versions
         }
     }
 }

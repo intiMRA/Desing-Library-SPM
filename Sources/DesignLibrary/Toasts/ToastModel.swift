@@ -69,7 +69,7 @@ public enum ToastStyle {
 
 @MainActor
 public class ToastModel {
-    private let timeToDismiss = 10
+    private let timeToDismiss = 5
     let style: ToastStyle
     let shouldDismiss: () -> Void
     

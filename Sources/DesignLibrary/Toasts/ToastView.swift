@@ -44,15 +44,17 @@ public struct ToastView: View {
                      }
             }
             .padding()
+            .background(model.style.color.opacity(0.3))
             .frame(maxWidth: .infinity)
             .clipShape(RoundedRectangle(cornerRadius: 8))
-            .background(model.style.color.opacity(0.05))
             .background(
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(lineWidth: 1)
                     .foregroundStyle(model.style.color)
-                    .shadow(color: Color(.shadow).opacity(0.25), radius: 2, x: 1, y: 1))
+                    .shadow(color: Color(.shadow).opacity(0.25), radius: 2, x: 1, y: 1)
+            )
             .padding(.all, .medium)
+            .background(.background)
         }
         .task {
             model.setDismissTimer()

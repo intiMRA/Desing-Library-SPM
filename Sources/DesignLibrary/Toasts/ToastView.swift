@@ -32,6 +32,8 @@ public struct ToastView: View {
                     Text(model.style.message)
                         .font(.body)
                         .foregroundStyle(Color(.text))
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 
                 Spacer()

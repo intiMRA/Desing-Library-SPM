@@ -7,7 +7,7 @@
 import Foundation
 import SwiftUI
 
-public enum ToastStyle {
+public enum ToastStyle: Hashable {
     
     var color: Color {
         switch self {

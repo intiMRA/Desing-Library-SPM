@@ -16,7 +16,7 @@ public struct ToastView: View {
     
     public var body: some View {
         VStack(alignment: .leading) {
-            HStack {
+            HStack(alignment: .top) {
                 model.style.icon
                     .renderingMode(.template)
                     .foregroundStyle(model.style.color)

@@ -27,6 +27,8 @@ public struct ToastView: View {
                         Text(title)
                             .font(.headline)
                             .foregroundStyle(Color(.text))
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
                     
                     Text(model.style.message)

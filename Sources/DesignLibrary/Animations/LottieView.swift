@@ -12,9 +12,9 @@ public enum DesignAnimations {
     //loading
     case jumpLoading
     case skipLoading
-    case standardLoadding
     case pigeonLoading
     case fountain
+    case standardLoading
     
     var animationName: String {
         switch self {
@@ -22,12 +22,12 @@ public enum DesignAnimations {
             return "jumpLoading"
         case .skipLoading:
             return UITraitCollection.current.userInterfaceStyle == .light ? "skippingLoadingLight" : "skippingLoadingDark"
-        case .standardLoadding:
-            return UITraitCollection.current.userInterfaceStyle == .light ? "standardLoaddingLight" : "standardLoaddingDark"
         case .pigeonLoading:
             return UITraitCollection.current.userInterfaceStyle == .light ? "pigeonLoadingLight" : "pigeonLoadingDark"
         case .fountain:
             return UITraitCollection.current.userInterfaceStyle == .light ? "fountainAnimation" : "fountainAnimationDark"
+        case .standardLoading:
+            return UITraitCollection.current.userInterfaceStyle == .light ? "standardLoading" : "standardLoadingDark"
             
         }
     }

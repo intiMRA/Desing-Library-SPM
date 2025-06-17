@@ -25,7 +25,7 @@ public enum DesignAnimations {
         case .pigeonLoading:
             return UITraitCollection.current.userInterfaceStyle == .light ? "pigeonLoadingLight" : "pigeonLoadingDark"
         case .fountain:
-            return "fountainAnimation"
+            return UITraitCollection.current.userInterfaceStyle == .light ? "fountainAnimationLight" : "fountainAnimationDark"
         case .standardLoading:
             return UITraitCollection.current.userInterfaceStyle == .light ? "standardLoading" : "standardLoadingDark"
             

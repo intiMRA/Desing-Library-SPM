@@ -9,7 +9,7 @@ import SwiftUI
 
 public enum ToastStyle: Hashable {
     
-    var color: Color {
+    public var color: Color {
         switch self {
         case .warning:
             return Color(.toastWarning)

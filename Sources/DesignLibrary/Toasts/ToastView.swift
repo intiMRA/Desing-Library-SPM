@@ -16,50 +16,50 @@ public struct ToastView: View {
     
     public var body: some View {
         VStack(alignment: .leading) {
-            HStack(alignment: .top) {
-                model.style.icon
-                    .renderingMode(.template)
-                    .foregroundStyle(model.style.color)
-                    .padding(.horizontal, .xSmall)
-                
-                VStack(alignment: .leading, spacing: .xxxSmall) {
-                    if let title = model.style.title {
-                        Text(title)
-                            .font(.headline)
+            HStack(alignment: .center) {
+                    model.style.icon
+                        .renderingMode(.template)
+                        .foregroundStyle(model.style.color)
+                        .padding(.horizontal, .xSmall)
+                    
+                    VStack(alignment: .leading, spacing: .xxxSmall) {
+                        if let title = model.style.title {
+                            Text(title)
+                                .font(.headline)
+                                .foregroundStyle(Color(.text))
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                        
+                        Text(model.style.message)
+                            .font(.body)
                             .foregroundStyle(Color(.text))
                             .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     
-                    Text(model.style.message)
-                        .font(.body)
-                        .foregroundStyle(Color(.text))
-                        .lineLimit(nil)
-                        .fixedSize(horizontal: false, vertical: true)
+                    Spacer()
+                    
+                    Button {
+                        model.shouldDismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(model.style.color)
+                    }
                 }
-                
-                Spacer()
-                
-                Button {
-                    model.shouldDismiss()
-                     } label: {
-                       Image(systemName: "xmark")
-                             .foregroundColor(model.style.color)
-                     }
-            }
-            .padding()
-            .background(model.style.color.opacity(0.3))
-            .frame(maxWidth: .infinity)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
-            .background(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(lineWidth: 2)
-                    .foregroundStyle(model.style.color)
-                    .shadow(color: Color(.shadow).opacity(0.25), radius: 2, x: 1, y: 1)
-            )
-            .background(.background)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
-            .padding(.all, .large)
+                .padding()
+                .conditionalGlass(legacyColor: .init(uiColor: .systemBackground))
+                .frame(maxWidth: .infinity)
+                .clipShape(RoundedRectangle(cornerRadius: .greatestFiniteMagnitude))
+                .background(
+                    RoundedRectangle(cornerRadius: .greatestFiniteMagnitude)
+                        .stroke(lineWidth: 2)
+                        .foregroundStyle(model.style.color)
+                        .shadow(color: Color(.shadow).opacity(0.25), radius: 2, x: 1, y: 1)
+                )
+                .background(.clear)
+                .padding(.all, .large)
+
         }
         .task {
             model.setDismissTimer()
@@ -84,7 +84,6 @@ public struct ToastView: View {
             }
             .background(Color.clear)
             .presentationBackground(Color.clear)
-            .background(.background)
         } else {
             // Fallback on earlier versions
         }

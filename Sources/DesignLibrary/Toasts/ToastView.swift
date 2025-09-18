@@ -53,11 +53,11 @@ public struct ToastView: View {
                 .clipShape(RoundedRectangle(cornerRadius: .greatestFiniteMagnitude))
                 .background(
                     RoundedRectangle(cornerRadius: .greatestFiniteMagnitude)
-                        .stroke(lineWidth: 1)
+                        .stroke(lineWidth: 2)
                         .foregroundStyle(model.style.color)
                         .shadow(color: Color(.shadow).opacity(0.25), radius: 2, x: 1, y: 1)
                 )
-                .background(.background)
+                .background(.clear)
                 .padding(.all, .large)
 
         }

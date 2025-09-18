@@ -48,18 +48,16 @@ public struct ToastView: View {
                     }
                 }
                 .padding()
-                .background(model.style.color.opacity(0.3))
+                .conditionalGlass()
                 .frame(maxWidth: .infinity)
                 .clipShape(RoundedRectangle(cornerRadius: .greatestFiniteMagnitude))
                 .background(
                     RoundedRectangle(cornerRadius: .greatestFiniteMagnitude)
-                        .stroke(lineWidth: 2)
+                        .stroke(lineWidth: 1)
                         .foregroundStyle(model.style.color)
                         .shadow(color: Color(.shadow).opacity(0.25), radius: 2, x: 1, y: 1)
                 )
                 .background(.background)
-                .conditionalGlass()
-                .clipShape(RoundedRectangle(cornerRadius: .greatestFiniteMagnitude))
                 .padding(.all, .large)
 
         }

@@ -8,7 +8,7 @@ import SwiftUI
 
 extension View {
     @ViewBuilder
-    func conditionalGlass(titnt: Color? = nil) -> some View {
+    func conditionalGlass(titnt: Color? = nil, legacyColor: Color? = nil) -> some View {
         if #available(iOS 26.0, *) {
             if let titnt {
                 self
@@ -19,8 +19,13 @@ extension View {
                     .glassEffect()
             }
         } else {
-            self
-                .background(titnt)
+            if let legacyColor {
+                self
+                    .background(legacyColor)
+            }
+            else {
+                self
+            }
         }
     }
 }

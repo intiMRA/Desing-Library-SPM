@@ -48,7 +48,7 @@ public struct ToastView: View {
                     }
                 }
                 .padding()
-                .conditionalGlass()
+                .conditionalGlass(legacyColor: model.style.color.opacity(0.5))
                 .frame(maxWidth: .infinity)
                 .clipShape(RoundedRectangle(cornerRadius: .greatestFiniteMagnitude))
                 .background(
@@ -84,7 +84,6 @@ public struct ToastView: View {
             }
             .background(Color.clear)
             .presentationBackground(Color.clear)
-            .background(.background)
         } else {
             // Fallback on earlier versions
         }

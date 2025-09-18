@@ -8,11 +8,11 @@ import SwiftUI
 
 extension View {
     @ViewBuilder
-    func conditionalGlass(titnt: Color? = nil, legacyColor: Color? = nil) -> some View {
+    func conditionalGlass(tint: Color? = nil, legacyColor: Color? = nil) -> some View {
         if #available(iOS 26.0, *) {
-            if let titnt {
+            if let tint {
                 self
-                    .glassEffect(.regular.tint(titnt))
+                    .glassEffect(.regular.tint(tint))
             }
             else {
                 self
